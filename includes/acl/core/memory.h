@@ -37,14 +37,14 @@
 #include <cstdlib>	// For posix_memalign
 #endif
 
-#if defined(__ANDROID__)
-namespace std
-{
+//#if defined(__ANDROID__)
+//namespace std
+//{
 	// Missing function because android uses an older compiler that doesn't support all of C++11
-	template<typename Type>
-	using is_trivially_default_constructible = has_trivial_default_constructor<Type>;
-}
-#endif
+//	template<typename Type>
+//	using is_trivially_default_constructible = has_trivial_default_constructor<Type>;
+//}
+//#endif
 
 namespace acl
 {

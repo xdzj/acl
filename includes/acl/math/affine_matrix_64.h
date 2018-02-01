@@ -31,7 +31,7 @@
 
 namespace acl
 {
-	AffineMatrix_64 matrix_set(const Vector4_64& x_axis, const Vector4_64& y_axis, const Vector4_64& z_axis, const Vector4_64& w_axis)
+	inline AffineMatrix_64 matrix_set(const Vector4_64& x_axis, const Vector4_64& y_axis, const Vector4_64& z_axis, const Vector4_64& w_axis)
 	{
 		ACL_ENSURE(vector_get_w(x_axis) == 0.0, "X axis does not have a W component == 0.0");
 		ACL_ENSURE(vector_get_w(y_axis) == 0.0, "Y axis does not have a W component == 0.0");
@@ -40,7 +40,7 @@ namespace acl
 		return AffineMatrix_64{x_axis, y_axis, z_axis, w_axis};
 	}
 
-	AffineMatrix_64 matrix_set(const Quat_64& quat, const Vector4_64& translation, const Vector4_64& scale)
+	inline AffineMatrix_64 matrix_set(const Quat_64& quat, const Vector4_64& translation, const Vector4_64& scale)
 	{
 		ACL_ENSURE(quat_is_normalized(quat), "Quaternion is not normalized");
 
